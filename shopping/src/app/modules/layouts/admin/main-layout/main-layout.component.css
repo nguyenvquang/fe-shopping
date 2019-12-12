@@ -1,0 +1,10 @@
+.main-layout {
+  height: 100vh;
+}
+.main-container {
+  /*background: #fff !important;*/
+}
+.list-item {
+  width: 300px;
+  padding: 7px;
+}

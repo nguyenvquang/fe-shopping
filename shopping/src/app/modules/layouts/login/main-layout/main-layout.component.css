@@ -1,0 +1,11 @@
+.main-layout {
+  background-image: url("../../../../../assets/images/background.PNG") !important;
+    background-repeat-x: no-repeat  !important;
+    background-repeat-y: no-repeat  !important;
+    background-size: 100%  !important;
+  height: 100vh;
+  overflow: hidden;
+}
+.mat-list-item {
+  width: 300px;
+}
