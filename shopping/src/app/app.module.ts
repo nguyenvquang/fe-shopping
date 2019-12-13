@@ -16,7 +16,7 @@ import {AngularFireMessagingModule} from '@angular/fire/messaging';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { PasswordDirective } from './password.directive';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import {APP_BASE_HREF, CommonModule} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule, MatInputModule} from '@angular/material';
@@ -47,6 +47,8 @@ import {ToastrModule} from 'ngx-toastr';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireMessagingModule,
+    NgbModule,
+    NgbPaginationModule
     // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [PushNotificationService,

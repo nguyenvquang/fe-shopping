@@ -13,6 +13,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireMessagingModule} from '@angular/fire/messaging';
 import {UrlInterceptor} from '../interceptor/url.interceptor';
 import {ShareImportModule} from '../share-import/share-import.module';
+import {ProductService} from './product.service';
 
 
 
@@ -29,6 +30,7 @@ import {ShareImportModule} from '../share-import/share-import.module';
     UserService,
     MessagingService,
     AuthService,
+    ProductService
   ]
 })
 export class ShareServiceModule { }
