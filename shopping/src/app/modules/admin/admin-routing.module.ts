@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [ICanactive] },
   { path: '', loadChildren: () => import(`../admin/product/product.module`).then(m => m.ProductModule), canActivate: [ICanactive] },
+  { path: '', loadChildren: () => import(`../admin/calendar/calendar.module`).then(m => m.CalendarModule), canActivate: [ICanactive] },
 ];
 
 @NgModule({

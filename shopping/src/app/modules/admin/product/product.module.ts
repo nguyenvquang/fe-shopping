@@ -14,7 +14,6 @@ import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     ProductRoutingModule,
     ShareImportModule,
-    NgbPaginationModule
   ]
 })
 export class ProductModule { }

@@ -44,9 +44,9 @@ export class AuthService {
   }
 
   canActive(): Observable<boolean> {
-    if (!this.getToken()) {
-      return of(false);
-    }
+    // if (!this.getToken()) {
+    //   return of(false);
+    // }
     // return this.verifyToken();
     return of(true);
   }

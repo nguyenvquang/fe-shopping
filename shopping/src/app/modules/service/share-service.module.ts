@@ -14,6 +14,7 @@ import {AngularFireMessagingModule} from '@angular/fire/messaging';
 import {UrlInterceptor} from '../interceptor/url.interceptor';
 import {ShareImportModule} from '../share-import/share-import.module';
 import {ProductService} from './product.service';
+import {CalendarService} from './calendar.service';
 
 
 
@@ -30,7 +31,8 @@ import {ProductService} from './product.service';
     UserService,
     MessagingService,
     AuthService,
-    ProductService
+    ProductService,
+    CalendarService
   ]
 })
 export class ShareServiceModule { }
