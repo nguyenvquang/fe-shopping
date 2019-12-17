@@ -1,16 +1,11 @@
 import {NgModule} from '@angular/core';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireDatabaseModule} from '@angular/fire/database';
-import {AngularFireAuthModule} from '@angular/fire/auth';
-import {AngularFireMessagingModule} from '@angular/fire/messaging';
 import {ToastrModule} from 'ngx-toastr';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
   MatButtonModule,
-  MatCardModule, MatCheckboxModule,
+  MatCardModule, MatCheckboxModule, MatDatepickerModule, MatDialog, MatDialogModule,
   MatFormFieldModule, MatIconModule,
-  MatInputModule, MatListModule,
+  MatInputModule, MatListModule, MatNativeDateModule,
   MatPaginatorModule, MatProgressBarModule,
   MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatSliderModule,
   MatTableModule
@@ -19,6 +14,7 @@ import {NgxSpinnerModule} from 'ngx-spinner';
 import {NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {EchartsModule} from '../charts/echarts.module';
+import {MaterialTimePickerModule} from '@candidosales/material-time-picker';
 
 @NgModule({
   declarations: [],
@@ -46,6 +42,10 @@ import {EchartsModule} from '../charts/echarts.module';
     ReactiveFormsModule,
     EchartsModule,
     ToastrModule.forRoot(),
+    MatDialogModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MaterialTimePickerModule,
   ],
   exports: [
     ToastrModule,
@@ -69,7 +69,11 @@ import {EchartsModule} from '../charts/echarts.module';
     NgbPaginationModule,
     FormsModule,
     ReactiveFormsModule,
-    EchartsModule
+    EchartsModule,
+    MatDialogModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MaterialTimePickerModule
   ],
 })
 export class ShareImportModule {

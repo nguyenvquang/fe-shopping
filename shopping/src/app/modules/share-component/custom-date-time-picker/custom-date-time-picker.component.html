@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutAlign="space-around start" >
+  <mat-calendar style="width: 330px;"
+                [selected]="selectedDate"
+                [startAt]="startAt"
+                [minDate]="minDate"
+                [maxDate]="maxDate"
+                [dateFilter]="myDateFilter"
+                (selectedChange)="onSelect($event)"
+  >
+  </mat-calendar>
+  <w-time color="primary" [userTime]="exportTime" (change)="onChangeHour($event)"></w-time>
+  <material-timepicker color="primary" label="Hour" [userTime]="exportTime" (change)="onChangeHour($event)" revertLabel="Remove" submitLabel="Ok"></material-timepicker>
+</div>

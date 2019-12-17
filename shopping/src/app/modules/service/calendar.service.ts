@@ -26,4 +26,20 @@ export class CalendarService {
     );
   }
 
+  createEvent(event: any, success?: Function, error?: Function) {
+    return this.http.post('/api/calendares/events', event)
+    .subscribe(
+      (response) => {
+        if (success) {
+          success(response);
+        }
+      },
+      error1 => {
+        if (error) {
+          error(error1);
+        }
+      }
+    );
+  }
+
 }

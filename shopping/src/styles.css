@@ -7,3 +7,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 /*  background-repeat-y: no-repeat;*/
 /*  background-size: 100%;*/
 }
+.f-w {
+  width: 100%;
+}

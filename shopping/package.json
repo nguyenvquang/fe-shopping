@@ -25,6 +25,7 @@
     "@angular/pwa": "^0.803.19",
     "@angular/router": "~8.2.14",
     "@angular/service-worker": "~8.2.14",
+    "@candidosales/material-time-picker": "^2.0.0",
     "@nebular/eva-icons": "4.5.0",
     "@nebular/theme": "^4.5.0",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",

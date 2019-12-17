@@ -1,0 +1,10 @@
+<td>
+  <ng-container *ngFor="let ac of functions">
+    <span class="mr-1">
+      <button mat-raised-button [matTooltip]="ac.tooltip" (click)="action(ac)">
+        <i [ngClass]="ac.icon"></i>
+          {{ac.title}}
+      </button>
+    </span>
+  </ng-container>
+</td>
