@@ -4,13 +4,15 @@
 /deep/.w-time .w-timepicker-time-container {
   padding: 15px;
   width: 100% !important;
+  background: transparent !important;
+  margin-top: 30px  !important;
 }
 /deep/.w-clock-wrapper .w-clock {
   padding: 12px !important;
   background: #0c0a0a !important;
 }
 /deep/.w-time .w-timepicker-time-container.mat-toolbar-single-row {
-  height: 90px !important;
+  /*height: 90px !important;*/
 }
 /deep/.w-timepicker-dialog {
   overflow: hidden !important;

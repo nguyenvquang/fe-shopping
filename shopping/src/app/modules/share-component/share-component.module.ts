@@ -5,8 +5,8 @@ import { NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './table/table.component';
 import {
   MatButtonModule, MatCardModule, MatDatepickerModule,
-  MatDialogModule,
-  MatIconModule, MatNativeDateModule,
+  MatDialogModule, MatFormFieldModule,
+  MatIconModule, MatInputModule, MatNativeDateModule,
   MatPaginatorModule,
   MatSortModule,
   MatTableModule,
@@ -17,15 +17,17 @@ import { DialogComponent } from './dialog/dialog.component';
 import { CustomDateTimePickerComponent } from './custom-date-time-picker/custom-date-time-picker.component';
 import {MaterialTimePickerModule} from '@candidosales/material-time-picker';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { MDateTimePickerComponent } from './m-date-time-picker/m-date-time-picker.component';
 
 
 
 @NgModule({
-  declarations: [PagingComponent, TableComponent, FunctionRowComponent, DialogComponent, CustomDateTimePickerComponent],
+  declarations: [PagingComponent, TableComponent, FunctionRowComponent, DialogComponent, CustomDateTimePickerComponent, MDateTimePickerComponent],
   exports: [
     PagingComponent,
     TableComponent,
-    CustomDateTimePickerComponent
+    CustomDateTimePickerComponent,
+    MDateTimePickerComponent
   ],
   imports: [
     CommonModule,
@@ -41,10 +43,13 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatDatepickerModule,
     MatNativeDateModule,
     MaterialTimePickerModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   entryComponents: [
     DialogComponent,
+    CustomDateTimePickerComponent
   ]
 })
 export class ShareComponentModule { }

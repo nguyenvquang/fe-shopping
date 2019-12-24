@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-custom-date-time-picker',
@@ -7,38 +9,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomDateTimePickerComponent implements OnInit {
 
-  selectedDate = new Date('2019/09/26');
-  startAt = new Date('2019/09/11');
-  minDate = new Date('2019/09/14');
-  maxDate = new Date(new Date().setMonth(new Date().getMonth() + 1));
-  year: any;
-  DayAndDate: string;
-  private exportTime = { hour: 7, minute: 15, meriden: 'PM', format: 24 };
+  selectedDate = new Date();
 
-  constructor(){
+  startAt = new Date();
+
+  exportTime = {hour: this.startAt.getHours(), minute: this.startAt.getMinutes(), meriden: this.selectedDate.getHours() > 11 ? 'PM' : 'AM', format: 24};
+
+  constructor(private dialogRef: MatDialogRef<CustomDateTimePickerComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.onSelect(this.selectedDate);
   }
 
   ngOnInit(): void {
+    let dateTime = this.data.dateTime;
+    if (!moment(dateTime).isValid()) { dateTime = new Date(); }
+    if (dateTime instanceof Date) {
+      this.selectedDate = dateTime;
+      this.exportTime.hour = dateTime.getHours();
+      this.exportTime.minute = dateTime.getMinutes();
+      this.exportTime.meriden = dateTime.getHours() > 11 ? 'PM' : 'AM';
+    }
   }
 
   onSelect(event) {
-    console.log(event);
     this.selectedDate = event;
-    const dateString = event.toDateString();
-    const dateValue = dateString.split(' ');
-    this.year = dateValue[3];
-    this.DayAndDate = dateValue[0] + ',' + ' ' + dateValue[1] + ' ' + dateValue[2];
-  }
-
-  myDateFilter = (d: Date): boolean => {
-    const day = d.getDay();
-    // Prevent Saturday and Sunday from being selected.
-    return day !== 0 && day !== 6 ;
   }
 
   onChangeHour(event) {
     console.log('event', event);
   }
 
+  onSubmit(event) {
+    const data = moment(this.selectedDate).format('DD/MM/YYYY') + ' ' + event.hour.toLocaleString('en-US', {
+      useGrouping: false,
+      minimumIntegerDigits: 2
+    }) + ':' + event.minute.toLocaleString('en-US', {useGrouping: false, minimumIntegerDigits: 2});
+    this.dialogRef.close(data);
+  }
+
+  onCancel() {
+    this.dialogRef.close();
+  }
 }
