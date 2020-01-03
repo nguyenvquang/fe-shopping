@@ -1,5 +1,8 @@
 <div class="form-group">
   <mat-form-field class="f-w">
-    <input class="f-w" matInput placeholder="Chọn ngày, tháng, năm, giờ, phút" (click)="showDatePicker()" readonly [value]="selectDateTime">
+    <div fxLayout="row" fxLayoutAlign="start none" >
+      <input nbTooltip="Click vào để chọn ngày tháng" class="f-w" nbInput fullWidth placeholder="Ngày, giờ..." (click)="showDatePicker()" readonly [value]="selectDateTime">
+      &nbsp;<span><i nbTooltip="Click vào để chọn ngày tháng" (click)="showDatePicker()" class="fa fa-calendar-alt" aria-hidden="true"></i></span>
+    </div>
   </mat-form-field>
 </div>
